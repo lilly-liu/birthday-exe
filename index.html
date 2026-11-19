@@ -6,11 +6,19 @@
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#f9b9ca">
   <title>birthday.exe ♥</title>
-  <link rel="stylesheet" href="style.css?v=2">
-  <script src="script.js?v=2" defer></script>
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="script.js?v=3" defer></script>
 </head>
 <body>
   <main class="window">
+    <div class="float-stickers" aria-hidden="true">
+      <canvas class="sticker sticker-top-left" data-sprite="rose" width="19" height="16"></canvas>
+      <canvas class="sticker sticker-top-right" data-sprite="heart" width="15" height="12"></canvas>
+      <canvas class="sticker sticker-bottom-left" data-sprite="heart" width="15" height="12"></canvas>
+      <canvas class="sticker sticker-bottom-right" data-sprite="rose" width="19" height="16"></canvas>
+      <canvas class="sticker sticker-side-left" data-sprite="heart" width="15" height="12"></canvas>
+      <canvas class="sticker sticker-side-right" data-sprite="rose" width="19" height="16"></canvas>
+    </div>
     <header class="titlebar">
       <span><span class="pixel-heart" aria-hidden="true"></span> birthday.exe</span>
       <div class="window-controls" aria-hidden="true"><span>−</span><span>□</span><span>×</span></div>
@@ -39,14 +47,14 @@
         <li>your beautiful eyes and smile and apple</li>
         <li>how amazing of a listener you are</li>
         <li>how comfortable and attractive you make me feel</li>
-        <li>your love of panther <canvas id="panther" width="24" height="20" role="img" aria-label="Fluffy black pixel cat"></canvas></li>
+        <li>your love of panther <canvas id="panther" data-sprite="panther" width="24" height="22" role="img" aria-label="Black pixel cat with big eyes and a curled tail"></canvas></li>
       </ol>
       <div class="gallery">
         <button id="prev" aria-label="Previous photos">◀</button>
         <div class="filmstrip" id="filmstrip" aria-label="Childhood photo album"></div>
         <button id="next" aria-label="Next photos">▶</button>
       </div>
-      <p class="closing-note">how lucky am i to know you in your 25 years of life, and how wonderful it is we found each other. thanks for doing life with me!</p>
+      <p class="closing-note">how lucky am i to know you in your 25 years of life, and how wonderful it is that we found each other. thanks for doing life with me!</p>
     </section>
   </main>
   <dialog id="photo-dialog" aria-label="Childhood photo viewer">

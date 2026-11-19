@@ -79,35 +79,85 @@ document.querySelector("#next").addEventListener("click", () => scrollPhotos(1))
 dialog.querySelector(".close").addEventListener("click", () => dialog.close());
 dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
 
-const cat = document.querySelector("#panther").getContext("2d");
-const pixels = [
-  "........................",
-  "........................",
-  "...##.....##............",
-  "...#g#...#g#............",
-  "..##g#####g##...........",
-  "..###########...........",
-  ".#############..........",
-  "..##y####y###...........",
-  ".#############.......###",
-  "..#####p#####.......####",
-  "...##ggg###........#####",
-  "..###########.....#####.",
-  ".##############..#####..",
-  "..###################...",
-  ".###################....",
-  "..#################.....",
-  ".##################.....",
-  "..####.####..#####......",
-  ".####..####.######......",
-  "........................"
-];
-const palette = { "#": "#24202a", g: "#62545f", y: "#b7d46b", p: "#d58b99" };
-pixels.forEach((row, y) => {
-  [...row].forEach((pixel, x) => {
-    if (palette[pixel]) {
-      cat.fillStyle = palette[pixel];
-      cat.fillRect(x, y, 1, 1);
-    }
+const sprites = {
+  heart: {
+    pixels: [
+      "..rrrr...rrrr..",
+      ".rppprr.rrrrrr.",
+      "rppprrrrrrrrrdr",
+      "rppprrrrrrrrrdr",
+      "rprrrrrrrrrrrdr",
+      ".rrrrrrrrrrrdr.",
+      "..rrrrrrrrrdr..",
+      "...rrrrrrrdr...",
+      "....rrrrrdr....",
+      ".....rrrdr.....",
+      "......rdr......",
+      ".......r......."
+    ],
+    palette: { r: "#df3058", p: "#fff1f5", d: "#ac204a" }
+  },
+  rose: {
+    pixels: [
+      "......#######......",
+      "....##ppppprr##....",
+      "..##ppprrrrrrrr##..",
+      ".#pprrr####rrrppr#.",
+      "#pprr##pprr#rrdppr#",
+      "#prr#pprrrrdr#rddr#",
+      "#rr#prr###prrdd#dr#",
+      "#rr#rr#pp#rrdd#ddr#",
+      ".#d#rr#pr##rrd#dr#.",
+      "#rd#rp#rdd#dr#rdrr#",
+      "#prd#rp###dd#rdrrp#",
+      "#rprd#rrddd#drrrrp#",
+      ".#rppd#####ddrrpr#.",
+      "..#rrppddrrrppdd#..",
+      "...##rrrrrrrdd##...",
+      ".....#########....."
+    ],
+    palette: { "#": "#641b3c", r: "#dc3154", p: "#ff829d", d: "#a81d47" }
+  },
+  panther: {
+    pixels: [
+      "......##......##........",
+      ".....#pp#....#pp#.......",
+      ".....#pdd####ddp#.......",
+      "....#ddvvddddvdd#.......",
+      "...#ddddddddddddd#......",
+      "..#ddgggdddgggdddd#.....",
+      "..#dgwwggdgwwggddd#.....",
+      ".#ddgwkggdgwkggddd#.....",
+      ".#ddgkkggdgkkggddd#.....",
+      ".#dddgggdddggggddd#.....",
+      ".#dppddddpddddppdd#.....",
+      "..#dddddkdkdddddd#......",
+      "...###dddddddd###.......",
+      "......#dddddd#..........",
+      ".....#dvdddddd#....##...",
+      "....#dvdddddddd#..#vd#..",
+      "....#dddddddddd#..#dd#..",
+      "...#ddddddddddd#..#dd#..",
+      "...#d#ddd#dddddd##dd#...",
+      "...#d#ddd#dddddddvd#....",
+      "....########dddddd#.....",
+      "............######......"
+    ],
+    palette: { "#": "#1d1524", d: "#332839", v: "#59465f", g: "#e9dc82", w: "#fff7d6", k: "#1b1421", p: "#d78da9" }
+  }
+};
+
+document.querySelectorAll("canvas[data-sprite]").forEach(canvas => {
+  const { pixels, palette } = sprites[canvas.dataset.sprite];
+  canvas.width = pixels[0].length;
+  canvas.height = pixels.length;
+  const context = canvas.getContext("2d");
+
+  pixels.forEach((row, y) => {
+    [...row].forEach((pixel, x) => {
+      if (pixel === ".") return;
+      context.fillStyle = palette[pixel];
+      context.fillRect(x, y, 1, 1);
+    });
   });
 });
