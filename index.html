@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f9b9ca">
+  <title>birthday.exe ♥</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="window">
+    <header class="titlebar">
+      <span><span class="pixel-heart" aria-hidden="true"></span> birthday.exe</span>
+      <div class="window-controls" aria-hidden="true"><span>−</span><span>□</span><span>×</span></div>
+    </header>
+    <section class="content intro" id="intro">
+      <div class="polaroids">
+        <figure class="polaroid"><img src="assets/photos/01.jpg" alt="Childhood photo"></figure>
+        <figure class="polaroid"><img src="assets/photos/02.jpg" alt="Childhood photo"></figure>
+      </div>
+      <h1><span class="pixel-heart" aria-hidden="true"></span> happy<br>birthday gf. <span class="pixel-heart" aria-hidden="true"></span></h1>
+      <p class="love">i love you!!</p>
+      <p class="question">wanna hear something cringe?</p>
+      <div class="choices">
+        <button id="yes" class="yes">YES</button>
+        <div class="no-slot"><button id="no" class="no">no</button></div>
+      </div>
+    </section>
+    <section class="content reveal" id="reveal" hidden>
+      <h2 tabindex="-1"><span class="pixel-heart" aria-hidden="true"></span> my favorite things about you are...</h2>
+      <ol class="reasons">
+        <li>the way you care about the world and those around you</li>
+        <li>how good you are at roasting me</li>
+        <li>your frequent sideeye on our first date</li>
+        <li>how genuine and carefree you are with me</li>
+        <li>your beautiful eyes and smile and apple</li>
+        <li>how amazing of a listener you are</li>
+        <li>how comfortable and attractive you make me feel</li>
+        <li>your love of panther <canvas id="panther" width="24" height="20" role="img" aria-label="Fluffy black pixel cat"></canvas></li>
+      </ol>
+      <div class="gallery">
+        <button id="prev" aria-label="Previous photos">◀</button>
+        <div class="filmstrip" id="filmstrip" aria-label="Childhood photo album"></div>
+        <button id="next" aria-label="Next photos">▶</button>
+      </div>
+    </section>
+  </main>
+  <dialog id="photo-dialog" aria-label="Childhood photo viewer">
+    <button class="close" aria-label="Close photo">×</button>
+    <img id="large-photo" alt="Childhood photo">
+  </dialog>
+</body>
+</html>
