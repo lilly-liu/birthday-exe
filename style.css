@@ -33,19 +33,20 @@ body {
   box-shadow: inset 2px 2px white, inset -2px -2px #9870c4, 5px 6px #70459050;
 }
 .float-stickers { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.float-stickers .sticker { position: absolute; }
 .sticker {
-  position: absolute;
   width: var(--size);
   height: auto;
   image-rendering: pixelated;
   transform: rotate(var(--tilt));
 }
-.sticker-top-left { top: 14%; left: -64px; --size: 38px; --tilt: -9deg; --delay: -1s; }
-.sticker-top-right { top: 8%; right: -52px; --size: 30px; --tilt: 12deg; --delay: -3s; }
-.sticker-bottom-left { bottom: 15%; left: -42px; --size: 28px; --tilt: -12deg; --delay: -2.2s; }
-.sticker-bottom-right { bottom: 16%; right: -67px; --size: 38px; --tilt: 8deg; --delay: -4.6s; }
-.sticker-side-left { top: 49%; left: -79px; --size: 18px; --tilt: 10deg; --delay: -3.8s; }
-.sticker-side-right { top: 44%; right: -78px; --size: 23px; --tilt: -12deg; --delay: -.4s; }
+.title-stickers { display: flex; align-items: center; gap: clamp(8px, 2vw, 18px); pointer-events: none; }
+.sticker-title-rose { --size: 24px; --tilt: -9deg; --delay: -1s; }
+.sticker-title-heart { --size: 20px; --tilt: 12deg; --delay: -3s; }
+.sticker-bottom-left { bottom: 10px; left: 16px; --size: 21px; --tilt: -12deg; --delay: -2.2s; }
+.sticker-bottom-right { bottom: 10px; right: 16px; --size: 26px; --tilt: 8deg; --delay: -4.6s; }
+.sticker-side-left { top: 49%; left: 12px; --size: 18px; --tilt: 10deg; --delay: -3.8s; }
+.sticker-side-right { top: 44%; right: 12px; --size: 21px; --tilt: -12deg; --delay: -.4s; }
 .sticker-side-left, .sticker-side-right { opacity: .72; }
 @keyframes float-sticker {
   from { transform: translateY(-5px) rotate(var(--tilt)); }
@@ -76,6 +77,7 @@ body {
   border: 2px inset #b28ccc;
   background: var(--paper);
   padding: clamp(22px, 5vw, 46px);
+  padding-bottom: clamp(36px, 5vw, 46px);
 }
 .intro { text-align: center; }
 .pixel-heart {
@@ -170,16 +172,16 @@ dialog { padding: 8px; border: 3px solid var(--deep); background: var(--lavender
 dialog::backdrop { background: #31132dc7; }
 dialog img { display: block; max-width: 100%; max-height: 78dvh; object-fit: contain; }
 .close { display: block; margin: 0 0 8px auto; padding: 0 8px; font-size: 24px; }
-@media (max-width: 920px) {
-  .sticker-top-left { top: -19px; left: 18px; --size: 28px; }
-  .sticker-top-right { top: -15px; right: 17px; --size: 24px; }
-  .sticker-bottom-left { bottom: -13px; left: 20px; --size: 20px; }
-  .sticker-bottom-right { bottom: -16px; right: 20px; --size: 26px; }
+@media (max-width: 600px) {
   .sticker-side-left, .sticker-side-right { display: none; }
 }
 @media (max-width: 420px) {
-  body { padding: 26px 8px; }
-  .content { padding: 23px 15px; }
+  body { padding: 16px 8px; }
+  .content { padding: 23px 15px 32px; }
+  .sticker-title-rose { --size: 19px; }
+  .sticker-title-heart { --size: 15px; }
+  .sticker-bottom-left { --size: 17px; }
+  .sticker-bottom-right { --size: 21px; }
   .window-controls span { width: 22px; }
   .filmstrip button { flex-basis: 88px; }
   .filmstrip img { height: 80px; }
