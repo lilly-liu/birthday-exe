@@ -6,8 +6,8 @@
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#f9b9ca">
   <title>birthday.exe ♥</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="script.js?v=2" defer></script>
 </head>
 <body>
   <main class="window">
@@ -20,7 +20,7 @@
         <figure class="polaroid"><img src="assets/photos/01.jpg" alt="Childhood photo"></figure>
         <figure class="polaroid"><img src="assets/photos/02.jpg" alt="Childhood photo"></figure>
       </div>
-      <h1><span class="pixel-heart" aria-hidden="true"></span> happy<br>birthday gf. <span class="pixel-heart" aria-hidden="true"></span></h1>
+      <h1 tabindex="-1"><span class="pixel-heart" aria-hidden="true"></span> happy<br>birthday gf. <span class="pixel-heart" aria-hidden="true"></span></h1>
       <p class="love">i love you!!</p>
       <p class="question">wanna hear something cringe?</p>
       <div class="choices">
@@ -29,6 +29,7 @@
       </div>
     </section>
     <section class="content reveal" id="reveal" hidden>
+      <button id="back" class="back" type="button">back to the card</button>
       <h2 tabindex="-1"><span class="pixel-heart" aria-hidden="true"></span> my favorite things about you are...</h2>
       <ol class="reasons">
         <li>the way you care about the world and those around you</li>
@@ -45,6 +46,7 @@
         <div class="filmstrip" id="filmstrip" aria-label="Childhood photo album"></div>
         <button id="next" aria-label="Next photos">▶</button>
       </div>
+      <p class="closing-note">how lucky am i to know you in your 25 years of life, and how wonderful it is we found each other. thanks for doing life with me!</p>
     </section>
   </main>
   <dialog id="photo-dialog" aria-label="Childhood photo viewer">

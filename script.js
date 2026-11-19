@@ -31,16 +31,24 @@ function escapeButton(event) {
 no.addEventListener("pointerenter", escapeButton);
 no.addEventListener("pointerdown", escapeButton);
 no.addEventListener("click", escapeButton);
-window.addEventListener("resize", () => {
+function resetNoButton() {
   no.classList.remove("escaped");
   no.style.removeProperty("left");
   no.style.removeProperty("top");
-});
+}
+window.addEventListener("resize", resetNoButton);
 
 yes.addEventListener("click", () => {
   intro.hidden = true;
   reveal.hidden = false;
   reveal.querySelector("h2").focus();
+});
+
+document.querySelector("#back").addEventListener("click", () => {
+  reveal.hidden = true;
+  resetNoButton();
+  intro.hidden = false;
+  intro.querySelector("h1").focus();
 });
 
 document.querySelectorAll(".reasons li").forEach((item, index) => {
